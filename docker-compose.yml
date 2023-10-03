@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  nginx:
+    container_name: nginx
+    ports:
+      - '80:80'
+    privileged: true
+    volumes:
+      - './default.conf:/etc/nginx/default.conf'
+      - './conf.d:/etc/nginx/conf.d/'
+      - './html/index.html:/usr/share/nginx/html/index.html'
+    image: 'nginx:1.25.2'
